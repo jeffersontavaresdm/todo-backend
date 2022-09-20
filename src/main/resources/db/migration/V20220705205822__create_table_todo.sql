@@ -1,0 +1,7 @@
+CREATE TABLE todo
+(
+    id         BIGSERIAL PRIMARY KEY,
+    name       VARCHAR(100) DEFAULT NULL,
+    start_date TIMESTAMP WITH TIME ZONE,
+    end_date   TIMESTAMP WITH TIME ZONE
+);

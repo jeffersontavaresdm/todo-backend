@@ -1,0 +1,18 @@
+jwt:
+  properties:
+    prefix-authorization-header: Bearer
+    authorization-type: Authorization
+    sign-token-password: "c3R1ZHlpbmcgYXV0aGVudGljYXRpb24gYW5kIEpXVAo="
+    jwt-expiration-time: 604800000
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/todo
+    username: todo
+    password: todo
+  jpa:
+    hibernate:
+      ddl-auto: update
