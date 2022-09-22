@@ -65,7 +65,7 @@ public class UserDetailsData implements UserDetails {
   @Override
   public String toString() {
     return MessageFormat.format(
-      "{'id': '{0}', 'key': '{1}', 'username': '{2}', 'email': '{3}', 'password': ''}",
+      "{'id': '{0}', 'key': '{1}', 'username': '{2}', 'email': '{3}'}",
       user.getId(),
       user.getKey(),
       user.getUsername(),
