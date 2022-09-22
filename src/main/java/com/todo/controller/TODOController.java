@@ -1,12 +1,11 @@
 package com.todo.controller;
 
-import com.todo.auth.dto.TODOUserDetails;
+import com.todo.auth.UserDetailsData;
 import com.todo.entity.dto.TODOPayload;
 import com.todo.service.TODOService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +23,7 @@ public class TODOController {
     @Validated @RequestBody TODOPayload toDoPayload,
     @AuthenticationPrincipal String principal
   ) {
-    return todoService.create(toDoPayload, null);
+    return todoService.create(toDoPayload, principal);
   }
 
   @GetMapping("/list")
