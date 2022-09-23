@@ -36,4 +36,9 @@ public record UserPayload(
       EncryptionUtils.encrypt(this.password)
     );
   }
+
+  @Override
+  public String toString() {
+    return "UserPayload(key=" + key + ", username=" + username + ", email=" + email + ")";
+  }
 }

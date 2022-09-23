@@ -16,7 +16,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "password")
 @Entity(name = "users")
 public class User {
 

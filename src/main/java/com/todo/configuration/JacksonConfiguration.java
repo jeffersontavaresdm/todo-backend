@@ -1,20 +1,18 @@
-package configuration;
+package com.todo.configuration;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 
-@Component(value = "configuration")
+@Configuration(value = "com/todo/configuration")
 public class JacksonConfiguration {
 
-  @Bean
-  @Qualifier("customObjectMapper")
+  @Bean("customObjectMapper")
   public ObjectMapper springObjectMapper() {
     return JsonMapper
       .builder()
