@@ -71,9 +71,7 @@ public class JwtValidationFilter extends BasicAuthenticationFilter {
 
     UsernamePasswordAuthenticationToken authenticatedUser = new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList());
 
-    var principal = authenticatedUser.getPrincipal().toString();
-
-    logger.info("User authenticated! User: {}", principal.substring(0, principal.lastIndexOf(",")).concat("}"));
+    logger.info("User authenticated! {}", authenticatedUser.getPrincipal().toString());
 
     return authenticatedUser;
   }

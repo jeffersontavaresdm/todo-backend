@@ -1,10 +1,3 @@
-jwt:
-  properties:
-    prefix-authorization-header: Bearer
-    authorization-type: Authorization
-    sign-token-password: "c3R1ZHlpbmcgYXV0aGVudGljYXRpb24gYW5kIEpXVAo="
-    jwt-expiration-time: 604800000
-
 spring:
   output:
     ansi:
