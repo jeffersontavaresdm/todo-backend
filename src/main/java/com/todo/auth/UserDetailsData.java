@@ -1,16 +1,17 @@
 package com.todo.auth;
 
 import com.todo.entity.User;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.Collections;
 
 /**
  * Classe responsável por armazenar os detalhes dos dados do usuário.
  */
+@ToString
 public class UserDetailsData implements UserDetails {
 
   private final User user;
@@ -24,22 +25,14 @@ public class UserDetailsData implements UserDetails {
     return Collections.emptyList();
   }
 
-  public String getKey() {
-    return user.getKey();
-  }
-
-  public String getEmail() {
+  @Override
+  public String getUsername() {
     return user.getEmail();
   }
 
   @Override
   public String getPassword() {
     return user.getPassword();
-  }
-
-  @Override
-  public String getUsername() {
-    return user.getEmail();
   }
 
   @Override
@@ -60,16 +53,5 @@ public class UserDetailsData implements UserDetails {
   @Override
   public boolean isEnabled() {
     return true;
-  }
-
-  @Override
-  public String toString() {
-    return MessageFormat.format(
-      "{'id': '{0}', 'key': '{1}', 'username': '{2}', 'email': '{3}'}",
-      user.getId(),
-      user.getKey(),
-      user.getUsername(),
-      user.getEmail()
-    );
   }
 }

@@ -81,7 +81,7 @@ public class JwtAuthenticateFilter extends UsernamePasswordAuthenticationFilter 
       .withSubject(user.toString())
       .sign(Algorithm.HMAC512(properties.signTokenPassword()));
 
-    logger.info("Token created successfully! Token: {}", token);
+    logger.info("Token created successfully! Token: {}", token.split("\\.")[1]);
 
     response.getWriter().write(token);
     response.getWriter().flush();

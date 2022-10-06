@@ -7,3 +7,10 @@ spring:
       enabled: detect
   profiles:
     active: ${PROFILE_ACTIVE:dev}
+
+jwt:
+  properties:
+    authorization-type: Authorization
+    prefix-authorization-header: Bearer
+    sign-token-password: "c2lnbi10b2tlbi1wYXNzd29yZAo="
+    jwt-expiration-time: 604800000
